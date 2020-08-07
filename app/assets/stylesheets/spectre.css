@@ -1494,6 +1494,7 @@ video.video-responsive::before {
   margin-right: auto;
   padding-left: .4rem;
   padding-right: .4rem;
+  padding-top: 2em;
   width: 100%;
 }
 

@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AuthyDeviseDemo</title>
+    <title>Authy Devise</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%=javascript_include_tag "https://www.authy.com/form.authy.min.js" %>
-  <%=stylesheet_link_tag "https://www.authy.com/form.authy.min.css" %>
+    <%=javascript_include_tag "https://www.authy.com/form.authy.min.js" %>
+    <%=stylesheet_link_tag "https://www.authy.com/form.authy.min.css" %>
 
   </head>
 
   <body>
-    <header class="navbar">
+  
+    <nav class="navbar navbar-expand-lg bg-secondary navbar-light">
       <section class="navbar-section">
-      </section>
-      <section class="navbar-section navbar-center">
-        <%= link_to "Authy Devise Example", root_path, class: "navbar-brand" %>
+        <%= link_to "Authy Devise Example", root_path, class: "navbar-brand nav-link" %>
       </section>
       <section class="navbar-section">
         <% if user_signed_in? %>
           <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+          &nbsp; &nbsp;
+          <%= link_to "Setting", edit_user_registration_path %>
         <% else %>
           <%= link_to "Sign in", new_user_session_path, class: "btn btn-link" %>
           <%= link_to "Sign up", new_user_registration_path, class: "btn btn-link" %>
         <% end %>
       </section>
-    </header>
+    </nav>
 
     <main class="container">
       <% flash.each do |level, text| %>

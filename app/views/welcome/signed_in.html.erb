@@ -1,8 +1,6 @@
 <div class="empty">
-  <h1>Welcome</h1>
-  <p>
-    This is a sample app to show how to use <%= link_to content_tag("code", "authy-devise"), "https://github.com/authy/authy-devise/" %>
-  </p>
+  <h1>Welcome <%= current_user.username %></h1>
+
   <div class="empty-icon">
     <%= image_tag gravatar_url(current_user.email, 64), width: 64, height: 64, class: "avatar avatar-xl" %>
   </div>
@@ -17,5 +15,3 @@
     <% end %>
   </div>
 </div>
-
-<%= render "instructions" %>
